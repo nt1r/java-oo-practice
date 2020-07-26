@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TWU-C-Hot-Searches.iml" filepath="$PROJECT_DIR$/.idea/modules/TWU-C-Hot-Searches.iml" group="TWU-C-Hot-Searches" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="TWU-C-Hot-Searches/app" />
+    </modules>
+  </component>
+</project>
