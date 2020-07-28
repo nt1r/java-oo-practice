@@ -16,8 +16,10 @@ public class AdminUser extends User {
      * Login with password.
      */
     @Override
-    public void login() {
-
+    public boolean login() {
+        // check if password is correct
+        // TODO: 2020/7/27 check password
+        return true;
     }
 
     private void addSuperNews(SuperNews superNews) {

@@ -1,9 +1,57 @@
 <resources>
     <string name="app_name">TWU-C Hot Searches</string>
     <string name="logo_name">TWU-C Hot Searches</string>
-    <string name="logo_image_description">system logo</string>
+    <string name="logo_image_description">System logo</string>
     <string name="hint_login_username">Username</string>
     <string name="hint_login_password">Password</string>
     <string name="login_button_text">Login</string>
     <string name="quit_button_text">Quit</string>
+    <string name="normal_user_radio_button_text">Normal User</string>
+    <string name="admin_user_radio_button_text">Admin User</string>
+    <string name="error_username_empty">Username Empty!</string>
+    <string name="error_password_empty">Password Empty!</string>
+    <string name="main_fragment_title">Hot Searches</string>
+    <string name="hot_search_note_image_description">Note image for hot searches</string>
+    <string name="hot_search_empty_text">Oops, no hot searches here. :( Try to add some news!</string>
+    <string name="add_hot_search_dialog_title">ADD ONE HOT SEARCH</string>
+    <string name="cancel">CANCEL</string>
+    <string name="add">ADD</string>
+    <string name="add_hot_search_hint">Type content below.</string>
+    <string name="hint_hot_search_content">Some words here.</string>
+    <string name="error_content_empty">Content Empty!</string>
+    <string name="add_super_hot_search_dialog_title">ADD ONE SUPER HOT SEARCH</string>
+    <string name="add_hot_search_dialog_succeed">ADD HOT SEARCH SUCCEED.</string>
+    <string name="add_super_hot_search_dialog_succeed">ADD SUPER HOT SEARCH SUCCEED.</string>
+    <string name="vote_hot_search_dialog_title">VOTE FOR HOT SEARCH</string>
+    <string name="select_hot_search_item_hint">Choose one hot search below</string>
+    <string name="vote_hot_search_dialog_vote_times_hint">Choose how many times you want to vote.</string>
+    <string name="vote">VOTE</string>
+    <string name="vote_times_left_title">"You can vote "</string>
+    <string name="times">" times."</string>
+    <string name="vote_hot_search_dialog_succeed">VOTE HOT SEARCH SUCCEED.</string>
+    <string name="bid_hot_search_dialog_price_hint">"You can bid with over "</string>
+    <string name="bid_hot_search_pay_price_title_hint">Price</string>
+    <string name="dollars">" $."</string>
+    <string name="hint_bid_price">Enter price here</string>
+    <string name="zero">0</string>
+    <string name="bid_price_empty">Bid Price Empty!</string>
+    <string name="bid_price_not_enough">Bid Price Not Enough!</string>
+    <string name="bid">BID</string>
+    <string name="bid_hot_search_dialog_title">BID ONE HOT SEARCH</string>
+    <string name="bid_hot_search_rank_title_hint">Choose rank</string>
+
+    <string-array name="normal_user_menu_item_name_list">
+        <item>View</item>
+        <item>Vote</item>
+        <item>Bid</item>
+        <item>Add</item>
+        <item>Log Out</item>
+    </string-array>
+
+    <string-array name="admin_user_menu_item_name_list">
+        <item>View</item>
+        <item>Add</item>
+        <item>Add Super Hot</item>
+        <item>Log Out</item>
+    </string-array>
 </resources>

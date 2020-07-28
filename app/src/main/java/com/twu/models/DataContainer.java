@@ -1,18 +1,18 @@
 package com.twu.models;
 
 import com.twu.models.news.News;
-import com.twu.models.news.NormalNews;
-import com.twu.models.news.SuperNews;
 import com.twu.models.user.User;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.List;
 import java.util.Locale;
 
 public class DataContainer {
     private static DataContainer instance = null;
     private User user;
-    private ArrayList<News> newsList = new ArrayList<>();
+    private List<News> newsList = new ArrayList<>();
+    private List<String> menuItemNameList = new ArrayList<>();
     private int idGenerator = 1;
 
     private DataContainer() {
@@ -40,7 +40,7 @@ public class DataContainer {
         this.user = user;
     }
 
-    public ArrayList<News> getNewsList() {
+    public List<News> getNewsList() {
         return newsList;
     }
 
@@ -50,6 +50,14 @@ public class DataContainer {
 
     public int getIdGenerator() {
         return idGenerator++;
+    }
+
+    public List<String> getMenuItemNameList() {
+        return menuItemNameList;
+    }
+
+    public void setMenuItemNameList(List<String> menuItemNameList) {
+        this.menuItemNameList = menuItemNameList;
     }
     /* getters and setters */
 
@@ -77,8 +85,16 @@ public class DataContainer {
         ArrayList<Integer> paidRankList = new ArrayList<>();
         if (!paidNewsList.isEmpty()) {
             for (News news: paidNewsList) {
-                paidRankList.add(news.getPaidRank() - 1);
-                newsList.set(news.getPaidRank() - 1, news);
+                // insert to the last position
+                if (news.getPaidRank() > newsList.size()) {
+                    paidRankList.add(newsList.size() - 1);
+                    newsList.set(newsList.size() - 1, news);
+                    // update rank
+                    newsList.get(newsList.size() - 1).setPaidRank(newsList.size() - 1);
+                } else {
+                    paidRankList.add(news.getPaidRank() - 1);
+                    newsList.set(news.getPaidRank() - 1, news);
+                }
             }
         }
 
@@ -106,5 +122,13 @@ public class DataContainer {
                     news.getPaidRank());
             System.out.println(output);
         }
+    }
+
+    public List<String> getAllNewsContents() {
+        List<String> allNewsContents = new ArrayList<>();
+        for (News news: newsList) {
+            allNewsContents.add(news.getContent());
+        }
+        return allNewsContents;
     }
 }

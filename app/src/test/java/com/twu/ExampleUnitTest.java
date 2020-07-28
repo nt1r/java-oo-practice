@@ -5,11 +5,8 @@ import com.twu.models.news.News;
 import com.twu.models.news.NormalNews;
 import com.twu.models.news.SuperNews;
 import com.twu.models.user.NormalUser;
-import com.twu.models.user.User;
 
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -39,7 +36,7 @@ public class ExampleUnitTest {
         user1.vote(news3, 4);
         user1.vote(news4, 3);
         user1.vote(news5, 2);
-        user1.payForTop(news2, 1, 100);
+        user1.bid(news2, 1, 100);
 
         DataContainer.getInstance().sortNews();
         DataContainer.getInstance().printForDebug();
