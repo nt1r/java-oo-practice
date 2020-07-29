@@ -39,6 +39,7 @@
     <string name="bid">BID</string>
     <string name="bid_hot_search_dialog_title">BID ONE HOT SEARCH</string>
     <string name="bid_hot_search_rank_title_hint">Choose rank</string>
+    <string name="add_hot_search_dialog_content_duplicated">Hot Search Already Exists!</string>
 
     <string-array name="normal_user_menu_item_name_list">
         <item>View</item>

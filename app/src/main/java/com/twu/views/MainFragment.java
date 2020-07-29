@@ -417,26 +417,41 @@ public class MainFragment extends Fragment {
                 // add
                 // check if edit text is valid
                 if (isEditTextContentValid(contentEditText.getText())) {
-                    contentInputLayout.setError(null);
 
-                    News news = isSuperNews
-                            ? new SuperNews(contentEditText.getText().toString())
-                            : new NormalNews(contentEditText.getText().toString());
-                    DataContainer.getInstance().getUser().addNews(news);
-                    DataContainer.getInstance().sortNews();
-                    adapter.notifyDataSetChanged();
-                    addAlertDialog.dismiss();
+                    String content = contentEditText.getText().toString();
+                    // check if content duplicated
+                    if (isHotSearchContentDuplicated(content)) {
+                        contentInputLayout.setError(getString(R.string.add_hot_search_dialog_content_duplicated));
+                    } else {
+                        contentInputLayout.setError(null);
 
-                    showSnackBar(mainView,
-                            isSuperNews
-                                    ? getString(R.string.add_super_hot_search_dialog_succeed)
-                                    : getString(R.string.add_hot_search_dialog_succeed)
-                    );
+                        News news = isSuperNews ? new SuperNews(content) : new NormalNews(content);
+                        DataContainer.getInstance().getUser().addNews(news);
+                        DataContainer.getInstance().sortNews();
+                        adapter.notifyDataSetChanged();
+                        addAlertDialog.dismiss();
+
+                        showSnackBar(mainView,
+                                isSuperNews
+                                        ? getString(R.string.add_super_hot_search_dialog_succeed)
+                                        : getString(R.string.add_hot_search_dialog_succeed)
+                        );
+                    }
                 } else {
                     contentInputLayout.setError(getString(R.string.error_content_empty));
                 }
             }
         });
+    }
+
+    private boolean isHotSearchContentDuplicated(String content) {
+        List<News> newsList = DataContainer.getInstance().getNewsList();
+        for (News news: newsList) {
+            if (content.equals(news.getContent())) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private boolean isEditTextContentValid(Editable content) {
